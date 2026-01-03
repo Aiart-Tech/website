@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>茶尋 - 雲端清香，溫柔包覆</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #fcfaf7;
+            color: #332d29;
+            line-height: 1.9;
+        }
+        .serif {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(252, 250, 247, 0.5), rgba(252, 250, 247, 0.5)), url('logo1920.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 1px;
+            background-color: #332d29;
+            margin: 1.5rem auto;
+            opacity: 0.3;
+        }
+
+        /* 導覽下拉選單 */
+        .dropdown { position: relative; padding-bottom: 10px; margin-bottom: -10px; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            min-width: 240px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #f3f4f6;
+            border-radius: 8px;
+            padding: 12px 0;
+            z-index: 100;
+        }
+        .dropdown:hover .dropdown-menu { display: block; animation: fadeIn 0.3s ease-out; }
+        .dropdown-item {
+            padding: 12px 24px;
+            display: block;
+            color: #57534e;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+        }
+        .dropdown-item:hover { background-color: #fcfaf7; color: #166534; padding-left: 28px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, 10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        .product-card { border-top: 1px solid #eee; padding-top: 6rem; margin-top: 2rem; }
+        .info-label { color: #a3a3a3; font-weight: 400; letter-spacing: 0.1em; width: 6rem; display: inline-block; }
+
+        /* 左側照片 */
+        .product-photo-container {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1 / 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(51, 45, 41, 0.06);
+            background-color: #f3f1ed;
+        }
+        .product-photo-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .product-photo-container:hover img { transform: scale(1.05); }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased text-[18px]">
+
+    <nav class="sticky top-0 z-[100] bg-white/95 backdrop-blur-md border-b border-stone-100 px-8 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-3xl font-bold tracking-[0.4em] serif text-stone-800 cursor-pointer" onclick="window.scrollTo(0,0)">茶尋</div>
+            <div class="hidden md:flex space-x-12 text-base font-medium tracking-[0.2em] text-stone-600">
+                <div class="dropdown">
+                    <a href="#series-1" class="hover:text-green-800 transition py-2">霜序系列</a>
+                    <div class="dropdown-menu">
+                        <a href="#prod-1" class="dropdown-item">① 大禹嶺高山茶</a>
+                        <a href="#prod-2" class="dropdown-item">② 梨山天池茶</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#series-2" class="hover:text-green-800 transition py-2">霧嶺系列</a>
+                    <div class="dropdown-menu">
+                        <a href="#prod-3" class="dropdown-item">③ 大禹嶺春茶</a>
+                        <a href="#prod-4" class="dropdown-item">④ 大禹嶺高冷茶</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#series-3" class="hover:text-green-800 transition py-2">白露系列</a>
+                    <div class="dropdown-menu">
+                        <a href="#prod-5" class="dropdown-item">⑤ 杉林溪烏龍茶</a>
+                        <a href="#prod-6" class="dropdown-item">⑥ 梨山金萱茶</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient min-h-[55vh] flex items-center justify-center text-center px-6">
+    <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl serif mb-10 tracking-[0.3em] text-stone-800">
+    <span class="block leading-[2.05]">尋一口來自雲端的清香</span>
+    <span class="block leading-[2.3] mt-3">讓心被溫柔包圍</span>
+</h1>
+ <p class="text-xl serif tracking-[0.4em] leading-[2.8] text-stone-500 opacity-80">
+            山與雲的交會處 ‧ 極致高山韻味
+        </p>
+    </div>
+</header>
+
+    <main class="max-w-7xl mx-auto px-8 py-24">
+
+        <!-- 霜序系列 -->
+        <section id="series-1" class="mb-48">
+            <h2 class="text-4xl text-center serif section-title mb-24 tracking-[0.6em] text-stone-800">霜序系列</h2>
+            <div class="space-y-40">
+                
+                <!-- ① 大禹嶺高山茶 -->
+                <div id="prod-1" class="product-card">
+                    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+                            <div class="sticky top-32 h-fit">
+                                <div class="product-photo-container">
+                                    <img src="t1.png" alt="大禹嶺高山茶">
+                                </div>
+                                <p class="text-stone-400 mt-10 text-2xl tracking-[0.15em] italic serif text-center lg:text-left">「雲霧深處的花香，是山的低語。」</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 space-y-12">
+                            <div>
+                                <h3 class="text-3xl serif mb-8 text-stone-800 tracking-wider font-bold">① 霜序系列 — 大禹嶺高山茶</h3>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">☁️ 茶的故事</h4>
+                                <p class="text-stone-600 text-lg text-justify">來自高海拔的大禹嶺山巒，茶乾緊實翠綠，香氣細膩而明亮。茶湯入口花香盈滿舌尖，甘甜綿長，如攀越山巒後的一縷清風。</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🍃 風味筆記</h4>
+                                <ul class="text-stone-600 space-y-4 text-lg">
+                                    <li class="flex"><span class="info-label">茶香</span><span>山花清香，淡雅高遠</span></li>
+                                    <li class="flex"><span class="info-label">茶湯</span><span>金黃晶透，柔中帶勁</span></li>
+                                    <li class="flex"><span class="info-label">口感</span><span>滑順細緻，滋潤回甘</span></li>
+                                    <li class="flex"><span class="info-label">餘韻</span><span>層次分明，悠長持久</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🌸 品飲時刻</h4>
+                                <p class="text-stone-600 text-lg">晨霧微開時，沖一壺霜序大禹嶺，讓高山茶的獨特風味在喉間靜靜蔓延。</p>
+                            </div>
+                            <div class="bg-stone-50/70 p-10 rounded-3xl border border-stone-100 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">📦 產品資訊</h4>
+                                    <div class="text-stone-600 space-y-3 text-lg">
+                                        <p><span class="info-label">產區</span>｜台灣 大禹嶺</p>
+                                        <p><span class="info-label">類型</span>｜高山烏龍</p>
+                                        <p><span class="info-label">包裝</span>｜真空鋁袋</p>
+                                        <p><span class="info-label">保存</span>｜陰涼乾燥處</p>
+                                    </div>
+                                </div>
+                                <div class="text-stone-600 border-t border-stone-200 pt-8">
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">💡 沖泡建議</h4>
+                                    <p class="mb-4">90°C熱水沖泡，首泡50秒，後續每泡延長10秒，可回沖5～7次。</p>
+                                    <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm text-stone-700 mb-4">
+                                        <span class="font-bold text-stone-900 block mb-2">冷泡建議：</span>
+                                        取茶葉約5g，注入冷開水或礦泉水500ml，冷藏6～8小時。冷泡後花香更顯清雅，甘潤如晨霧初散，柔中帶勁。
+                                    </div>
+                                    <p class="text-sm text-stone-400 italic font-medium">※ 以上水量建議可視個人濃淡喜好微調</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ② 梨山天池茶 -->
+                <div id="prod-2" class="product-card">
+                    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+                            <div class="sticky top-32 h-fit">
+                                <div class="product-photo-container">
+                                    <img src="t2.png" alt="梨山天池茶">
+                                </div>
+                                <p class="text-stone-400 mt-10 text-2xl tracking-[0.15em] italic serif text-center lg:text-left">「天池之上，花香如風甘味如詩。」</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 space-y-12">
+                            <div>
+                                <h3 class="text-3xl serif mb-8 text-stone-800 tracking-wider font-bold">② 霜序系列 — 梨山天池茶</h3>
+                                <p class="text-stone-500 mb-8 italic">在山與雲的交會處，找到最輕柔的撫慰。</p>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">☁️ 茶的故事</h4>
+                                <p class="text-stone-600 text-lg text-justify">茶乾翠綠帶花香與甘蔗香，沖泡後湯色晶瑩透亮，花香隨蒸氣交融。飲後回甘香醇、滋潤喉頭，如雲霧與陽光凝結成的朝露。</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🍃 風味筆記</h4>
+                                <ul class="text-stone-600 space-y-4 text-lg">
+                                    <li class="flex"><span class="info-label">茶香</span><span>高冷花香調、果香、蔗香</span></li>
+                                    <li class="flex"><span class="info-label">茶湯</span><span>淡金綠色，亮麗清透</span></li>
+                                    <li class="flex"><span class="info-label">口感</span><span>柔順甜潤、滑順細緻</span></li>
+                                    <li class="flex"><span class="info-label">餘韻</span><span>花果香綿延，甘潤柔長</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🌸 品飲時刻</h4>
+                                <p class="text-stone-600 text-lg text-justify">在靜謐的午後或黃昏微光裡，泡一壺梨山天池茶，讓茶香與心境共鳴，細細品味大自然的靜好與溫柔。</p>
+                            </div>
+                            <div class="bg-stone-50/70 p-10 rounded-3xl border border-stone-100 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">📦 產品資訊</h4>
+                                    <div class="text-stone-600 space-y-3 text-lg">
+                                        <p><span class="info-label">產區</span>｜台灣 梨山</p>
+                                        <p><span class="info-label">類型</span>｜高山烏龍</p>
+                                        <p><span class="info-label">包裝</span>｜真空鋁袋</p>
+                                        <p><span class="info-label">保存</span>｜陰涼乾燥處</p>
+                                    </div>
+                                </div>
+                                <div class="text-stone-600 border-t border-stone-200 pt-8">
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">💡 沖泡建議</h4>
+                                    <p class="mb-4">水溫90°C，第一泡50秒，之後每泡延長10秒，可回沖5次以上。</p>
+                                    <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm text-stone-700 mb-4">
+                                        <span class="font-bold text-stone-900 block mb-2">冷泡建議：</span>
+                                        取茶葉5g加冷水500ml，放入冰箱約6～8小時。冷泡後高山花香更顯柔潤，入口之間，像在雲霧中飲下一滴朝露。
+                                    </div>
+                                    <p class="text-sm text-stone-400 italic font-medium">※ 以上水量建議可視個人濃淡喜好微調</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 霧嶺系列 -->
+        <section id="series-2" class="mb-48">
+            <h2 class="text-4xl text-center serif section-title mb-24 tracking-[0.6em] text-stone-800">霧嶺系列</h2>
+            <div class="space-y-40">
+                <!-- ③ 大禹嶺春茶 -->
+                <div id="prod-3" class="product-card">
+                    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+                            <div class="sticky top-32 h-fit">
+                                <div class="product-photo-container">
+                                    <img src="t3.png" alt="大禹嶺春茶">
+                                </div>
+                                <p class="text-stone-400 mt-10 text-2xl tracking-[0.15em] italic serif text-center lg:text-left">「來自雲端的清香入喉，心也被溫柔包覆。」</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 space-y-12">
+                            <div>
+                                <h3 class="text-3xl serif mb-8 text-stone-800 tracking-wider font-bold">③ 霧嶺系列 — 大禹嶺春茶</h3>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">☁️ 茶的故事</h4>
+                                <p class="text-stone-600 text-lg text-justify">春日雲霧漫過山巒，嫩葉綻放柔光。茶湯晶透帶金色光澤，花香幽遠喉韻綿長如晨霧散開，溫柔卻有力量。</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🍃 風味筆記</h4>
+                                <ul class="text-stone-600 space-y-4 text-lg">
+                                    <li class="flex"><span class="info-label">茶香</span><span>花香清幽，層次豐富</span></li>
+                                    <li class="flex"><span class="info-label">茶湯</span><span>晶透金黃，光澤柔亮</span></li>
+                                    <li class="flex"><span class="info-label">口感</span><span>滑順甘潤，回韻綿長</span></li>
+                                    <li class="flex"><span class="info-label">餘韻</span><span>清新淡雅，持久香甜</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🌸 品飲時刻</h4>
+                                <p class="text-stone-600 text-lg">午後陽光灑落，泡一壺春茶，時間緩慢流動，花香在氣息中化開。</p>
+                            </div>
+                            <div class="bg-stone-50/70 p-10 rounded-3xl border border-stone-100 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">📦 產品資訊</h4>
+                                    <div class="text-stone-600 space-y-3 text-lg">
+                                        <p><span class="info-label">產區</span>｜台灣 大禹嶺</p>
+                                        <p><span class="info-label">類型</span>｜春摘高山烏龍</p>
+                                        <p><span class="info-label">包裝</span>｜真空鋁袋</p>
+                                        <p><span class="info-label">保存</span>｜陰涼乾燥處</p>
+                                    </div>
+                                </div>
+                                <div class="text-stone-600 border-t border-stone-200 pt-8">
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">💡 沖泡建議</h4>
+                                    <p class="mb-4">水溫90°C，第一泡50秒，之後每泡延長10秒，可回沖5次以上。</p>
+                                    <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm text-stone-700 mb-4">
+                                        <span class="font-bold text-stone-900 block mb-2">冷泡建議：</span>
+                                        取茶葉約5g，注入冷開水或礦泉水500ml，冷藏6小時以上。冷泡後金黃茶湯透出淡淡蜜香，花氣柔順、甘甜清潤。是春日午後最溫柔的一口雲光。
+                                    </div>
+                                    <p class="text-sm text-stone-400 italic font-medium">※ 以上水量建議可視個人濃淡喜好微調</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ④ 大禹嶺高冷茶 -->
+                <div id="prod-4" class="product-card">
+                    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+                            <div class="sticky top-32 h-fit">
+                                <div class="product-photo-container">
+                                    <img src="t4.png" alt="大禹嶺高冷茶">
+                                </div>
+                                <p class="text-stone-400 mt-10 text-2xl tracking-[0.15em] italic serif text-center lg:text-left">「高山靜謐，凝結成一盞清香。」</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 space-y-12">
+                            <div>
+                                <h3 class="text-3xl serif mb-8 text-stone-800 tracking-wider font-bold">④ 霧嶺系列 — 大禹嶺高冷茶</h3>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">☁️ 茶的故事</h4>
+                                <p class="text-stone-600 text-lg text-justify">高冷海拔造就了茶乾翠綠帶野花與柑橘清香。入口茶香飽滿綻放，甘味隨即佈滿舌尖。茶湯清新脫俗，尾韻如微風掠過。</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🍃 風味筆記</h4>
+                                <ul class="text-stone-600 space-y-4 text-lg">
+                                    <li class="flex"><span class="info-label">茶香</span><span>山野花調、淡雅橘香</span></li>
+                                    <li class="flex"><span class="info-label">茶湯</span><span>明亮淺金、純淨透澈</span></li>
+                                    <li class="flex"><span class="info-label">口感</span><span>清新滑潤、回甘迅速</span></li>
+                                    <li class="flex"><span class="info-label">餘韻</span><span>清爽淡雅、齒頰留香</span></li>
+                                </ul>
+                            </div>
+                            <!-- 補回品飲時刻 -->
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🌸 品飲時刻</h4>
+                                <p class="text-stone-600 text-lg">在需要專注或沉思的時刻，讓大禹嶺高冷茶的純粹，帶您找回內心的平靜。</p>
+                            </div>
+                            <div class="bg-stone-50/70 p-10 rounded-3xl border border-stone-100 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">📦 產品資訊</h4>
+                                    <div class="text-stone-600 space-y-3 text-lg">
+                                        <p><span class="info-label">產區</span>｜台灣 大禹嶺</p>
+                                        <p><span class="info-label">類型</span>｜高山烏龍</p>
+                                        <p><span class="info-label">包裝</span>｜真空鋁袋</p>
+                                        <p><span class="info-label">保存</span>｜陰涼乾燥處</p>
+                                    </div>
+                                </div>
+                                <div class="text-stone-600 border-t border-stone-200 pt-8">
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">💡 沖泡建議</h4>
+                                    <p class="mb-4">90°C熱水，第一泡50秒，續泡每次延長10秒，可沖泡5次以上。</p>
+                                    <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm text-stone-700 mb-4">
+                                        <span class="font-bold text-stone-900 block mb-2">冷泡建議：</span>
+                                        取茶葉5g置入600ml冷水中，靜置冰箱6～8小時。冷泡後的風味更顯純淨，花香與柑橘氣息在低溫中變得更細膩，每一口都是高山最涼爽的呼吸。
+                                    </div>
+                                    <p class="text-sm text-stone-400 italic font-medium">※ 以上水量建議可視個人濃淡喜好微調</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 白露系列 -->
+        <section id="series-3" class="mb-48">
+            <h2 class="text-4xl text-center serif section-title mb-24 tracking-[0.6em] text-stone-800">白露系列</h2>
+            <div class="space-y-40">
+                <!-- ⑤ 杉林溪烏龍茶 -->
+                <div id="prod-5" class="product-card">
+                    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+                            <div class="sticky top-32 h-fit">
+                                <div class="product-photo-container">
+                                    <img src="t5.png" alt="杉林溪烏龍茶">
+                                </div>
+                                <p class="text-stone-400 mt-10 text-2xl tracking-[0.15em] italic serif text-center lg:text-left">「大地與木質調的對話。」</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 space-y-12">
+                            <div>
+                                <h3 class="text-3xl serif mb-8 text-stone-800 tracking-wider font-bold">⑤ 白露系列 — 杉林溪烏龍茶</h3>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">☁️ 茶的故事</h4>
+                                <p class="text-stone-600 text-lg text-justify">生長於杉林環繞的茶園，茶乾微帶杉木香。湯色金黃透亮，茶湯入口後果香濃郁綻放。氣息充滿鼻腔與喉頭，如漫步杉林溪畔，感受自然與時光的律動。</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🍃 風味筆記</h4>
+                                <ul class="text-stone-600 space-y-4 text-lg">
+                                    <li class="flex"><span class="info-label">茶香</span><span>木質杉香、成熟果香</span></li>
+                                    <li class="flex"><span class="info-label">茶湯</span><span>深邃金黃、油亮飽滿</span></li>
+                                    <li class="flex"><span class="info-label">口感</span><span>香醇厚實、層次分明</span></li>
+                                    <li class="flex"><span class="info-label">餘韻</span><span>溫暖回甘、香氣繚繞</span></li>
+                                </ul>
+                            </div>
+                            <!-- 補回品飲時刻 -->
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🌸 品飲時刻</h4>
+                                <p class="text-stone-600 text-lg">在需要力量與沉穩的時刻，杉林溪烏龍茶的飽滿層次，能帶給您最踏實的慰藉。</p>
+                            </div>
+                            <div class="bg-stone-50/70 p-10 rounded-3xl border border-stone-100 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">📦 產品資訊</h4>
+                                    <div class="text-stone-600 space-y-3 text-lg">
+                                        <p><span class="info-label">產區</span>｜台灣 杉林溪</p>
+                                        <p><span class="info-label">類型</span>｜高山烏龍</p>
+                                        <p><span class="info-label">包裝</span>｜真空鋁袋</p>
+                                        <p><span class="info-label">保存</span>｜陰涼乾燥處</p>
+                                    </div>
+                                </div>
+                                <div class="text-stone-600 border-t border-stone-200 pt-8">
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">💡 沖泡建議</h4>
+                                    <p class="mb-4">水溫95°C，首泡50秒，後續每泡增加10秒，可回沖5～6次。</p>
+                                    <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm text-stone-700 mb-4">
+                                        <span class="font-bold text-stone-900 block mb-2">冷泡建議：</span>
+                                        5g茶葉加入500ml冷水，冷藏8小時以上。茶湯如金，甘潤清冽，木香與果香交織出內斂回韻。
+                                    </div>
+                                    <p class="text-sm text-stone-400 italic font-medium">※ 以上水量建議可視個人濃淡喜好微調</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ⑥ 梨山金萱茶 -->
+                <div id="prod-6" class="product-card">
+                    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                        <div class="lg:w-1/2 flex justify-center lg:justify-start">
+                            <div class="sticky top-32 h-fit">
+                                <div class="product-photo-container">
+                                    <img src="t6.png" alt="梨山金萱茶">
+                                </div>
+                                <p class="text-stone-400 mt-10 text-2xl tracking-[0.15em] italic serif text-center lg:text-left">「回甘中帶一抹溫柔。」</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 space-y-12">
+                            <div>
+                                <h3 class="text-3xl serif mb-8 text-stone-800 tracking-wider font-bold">⑥ 白露系列 — 梨山金萱茶</h3>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">☁️ 茶的故事</h4>
+                                <p class="text-stone-600 text-lg text-justify">高海拔環境賦予了金萱更細膩的質地。茶乾花香淡雅，微帶天然蔗糖氣息。沖泡後茶韻豐富、茶湯順滑。每一口都隱約藏著一縷溫柔奶香，如晨光溫暖的輕撫。</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🍃 風味筆記</h4>
+                                <ul class="text-stone-600 space-y-4 text-lg">
+                                    <li class="flex"><span class="info-label">茶香</span><span>隱隱花香、淡雅香醇</span></li>
+                                    <li class="flex"><span class="info-label">茶湯</span><span>嫩黃晶透、溫潤如玉</span></li>
+                                    <li class="flex"><span class="info-label">口感</span><span>甜潤細緻、柔滑飽滿</span></li>
+                                    <li class="flex"><span class="info-label">餘韻</span><span>甘甜悠長、韻味溫柔</span></li>
+                                </ul>
+                            </div>
+                            <!-- 補回品飲時刻 -->
+                            <div>
+                                <h4 class="text-xl font-bold text-stone-800 mb-5 tracking-widest border-l-2 border-stone-800 pl-4">🌸 品飲時刻</h4>
+                                <p class="text-stone-600 text-lg">回甘中帶一抹溫柔，像被春日暖陽輕輕吻過。適合與好友共享，或是獎勵努力了一天的自己。</p>
+                            </div>
+                            <div class="bg-stone-50/70 p-10 rounded-3xl border border-stone-100 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">📦 產品資訊</h4>
+                                    <div class="text-stone-600 space-y-3 text-lg">
+                                        <p><span class="info-label">產區</span>｜台灣 梨山</p>
+                                        <p><span class="info-label">類型</span>｜高山烏龍</p>
+                                        <p><span class="info-label">包裝</span>｜真空鋁袋</p>
+                                        <p><span class="info-label">保存</span>｜陰涼乾燥處</p>
+                                    </div>
+                                </div>
+                                <div class="text-stone-600 border-t border-stone-200 pt-8">
+                                    <h4 class="text-xl font-bold text-stone-800 mb-5">💡 沖泡建議</h4>
+                                    <p class="mb-4">熱泡水溫90°C，首泡50秒，後續每泡增加10秒，可回沖5次。</p>
+                                    <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm text-stone-700 mb-4">
+                                        <span class="font-bold text-stone-900 block mb-2">冷泡建議：</span>
+                                        取5g茶葉放入500ml冷水，冷藏6～8小時。口感順滑，奶香在低溫中緩緩釋放，甜潤而不膩。
+                                    </div>
+                                    <p class="text-sm text-stone-400 italic font-medium">※ 以上水量建議可視個人濃淡喜好微調</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 py-32 px-8 text-center">
+        <div class="text-5xl serif text-white tracking-[0.5em] mb-10">茶尋</div>
+        <p class="text-xl mb-16 tracking-[0.3em] opacity-80 serif">尋山之味，得心之靜。</p>
+        <div class="max-w-xs mx-auto border-t border-stone-800 pt-12 text-[12px] uppercase tracking-[0.3em] opacity-40">
+            &copy; 2026 茶尋 高山茶專門店. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
